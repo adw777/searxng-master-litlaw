@@ -2912,12 +2912,12 @@ categories_as_tabs:
 
 engines:
 
-  - name: qdrant
-    engine: qdrant
-    shortcut: qd
-    timeout: 20.0
-    categories: [vector]
-    disable: false
+  # - name: qdrant
+  #   engine: qdrant
+  #   shortcut: qd
+  #   timeout: 20.0
+  #   categories: [vector]
+  #   disable: false
 
   - name: legal wires
     engine: xpath
@@ -3054,18 +3054,17 @@ engines:
     timeout: 20.0
     disabled: false
 
-  - name: vidhi
-    engine: xpath
-    paging: false
-    search_url: https://vidhilegalpolicy.in/?s={query}
-    results_xpath: '//ul[contains(@class, "text-results__list")]/li'
-    title_xpath: './/a/text()'
-    url_xpath: './/a/@href'
-    content_xpath: null
-    shortcut: vidhi
-    categories: [law]
-    timeout: 20.0
-    disabled: false
+  # - name: vidhi
+  #   engine: xpath
+  #   paging: false
+  #   search_url: https://vidhilegalpolicy.in/?s={query}
+  #   results_xpath: '//ul[contains(@class, "text-results__list")]/li'
+  #   title_xpath: './/a/text()'
+  #   url_xpath: './/a/@href'
+  #   shortcut: vidhi
+  #   categories: [law]
+  #   timeout: 20.0
+  #   disabled: false
 
   - name: nlsrepo
     engine: xpath
@@ -3186,14 +3185,14 @@ engines:
     paging: false
     disabled: false
 
-  - name: nlsrepo
+  - name: nlsrepoin
     engine: xpath
     search_url: https://repository.nls.ac.in/do/search/?q={query}&start=0&context=1&facet=
     results_xpath: '//div[contains(@class, "result query")]'
     title_xpath: './/span[@class="title"]/a/text()'
     url_xpath: './/span[@class="title"]/a/@href'
     content_xpath: 'concat("Author: ", normalize-space(.//span[@class="author"]/strong/text()), " | Published in: ", normalize-space(.//span[@class="pub"]/a/text()), " | Date: ", normalize-space(.//p[@class="grid_2 fr"]/span[@class="year"]/strong/text()))'
-    shortcut: nls
+    shortcut: nlsin
     timeout: 20.0
     paging: false
     disabled: false
@@ -3281,18 +3280,18 @@ engines:
   #########################################################
   
 
-  - name: ipleaders
-    engine: xpath
-    paging: true
-    search_url: https://blog.ipleaders.in/?s={query}
-    results_xpath: '//div[@class="item-details"]'
-    title_xpath: './/h3[@class="entry-title td-module-title"]//a'
-    url_xpath: './/h3[@class="entry-title td-module-title"]//a/@href'
-    content_xpath: './/div[@class="td-excerpt"]' 
-    disabled: false
-    timeout: 10.0
-    categories: [law]
-    shortcut: ipl
+  # - name: ipleaders
+  #   engine: xpath
+  #   paging: true
+  #   search_url: https://blog.ipleaders.in/?s={query}
+  #   results_xpath: '//div[@class="item-details"]'
+  #   title_xpath: './/h3[@class="entry-title td-module-title"]//a'
+  #   url_xpath: './/h3[@class="entry-title td-module-title"]//a/@href'
+  #   content_xpath: './/div[@class="td-excerpt"]' 
+  #   disabled: false
+  #   timeout: 10.0
+  #   categories: [law]
+  #   shortcut: ipl
 
   - name: bar and bench
     engine: xpath
@@ -3331,57 +3330,57 @@ engines:
     categories: [law]
     shortcut: rbi
 
-  - name: et kegal
-    engine: xpath
-    paging: true
-    search_url: https://legal.economictimes.indiatimes.com/search/{query}?
-    results_xpath: '//article[@class="desc"]'
-    title_xpath: './/h3[@class="heading"]//a'
-    url_xpath: './/h3[@class="heading"]//a/@href'
-    content_xpath: './/p[@class="desktop-view"]'
-    page_size: 10
-    disabled: false
-    categories: [law, news]
-    shortcut: etl
+  # - name: et kegal
+  #   engine: xpath
+  #   paging: true
+  #   search_url: https://legal.economictimes.indiatimes.com/search/{query}?
+  #   results_xpath: '//article[@class="desc"]'
+  #   title_xpath: './/h3[@class="heading"]//a'
+  #   url_xpath: './/h3[@class="heading"]//a/@href'
+  #   content_xpath: './/p[@class="desktop-view"]'
+  #   page_size: 10
+  #   disabled: false
+  #   categories: [law, news]
+  #   shortcut: etl
   
-  - name: law and other things
-    engine: xpath
-    paging: true
-    search_url: https://lawandotherthings.com/?s={query}
-    results_xpath: '//div[@class="col-12 col-md-6"]'
-    title_xpath: './/h2[@class="entry-title h5"]//a'
-    url_xpath: './/h2[@class="entry-title h5"]//a/@href'
-    content_xpath: './/div[@class="entry-content"]//p'
-    page_size: 10
-    disabled: false
-    categories: [law, news]
-    shortcut: laot
+  # - name: law and other things
+  #   engine: xpath
+  #   paging: true
+  #   search_url: https://lawandotherthings.com/?s={query}
+  #   results_xpath: '//div[@class="col-12 col-md-6"]'
+  #   title_xpath: './/h2[@class="entry-title h5"]//a'
+  #   url_xpath: './/h2[@class="entry-title h5"]//a/@href'
+  #   content_xpath: './/div[@class="entry-content"]//p'
+  #   page_size: 10
+  #   disabled: false
+  #   categories: [law, news]
+  #   shortcut: laot
   
-  - name: legal india
-    engine: xpath
-    paging: true
-    search_url: https://www.legalindia.com/?s={query}
-    results_xpath: '//div[@class="td-block-span6"]'
-    title_xpath: './/h2[@class="entry-title td-module-title"]//a'
-    url_xpath: './/h2[@class="entry-title td-module-title"]//a/@href'
-    content_xpath: './/div[@class="td-module-meta-info"]'
-    page_size: 10
-    disabled: false
-    categories: [law, news]
-    shortcut: lei
+  # - name: legal india
+  #   engine: xpath
+  #   paging: true
+  #   search_url: https://www.legalindia.com/?s={query}
+  #   results_xpath: '//div[@class="td-block-span6"]'
+  #   title_xpath: './/h2[@class="entry-title td-module-title"]//a'
+  #   url_xpath: './/h2[@class="entry-title td-module-title"]//a/@href'
+  #   content_xpath: './/div[@class="td-module-meta-info"]'
+  #   page_size: 10
+  #   disabled: false
+  #   categories: [law, news]
+  #   shortcut: lei
   
-  - name: lex forti
-    engine: xpath
-    paging: true
-    search_url: https://lexforti.com/legal-news/?s={query}
-    results_xpath: '//div[@class="grve-post-top"]'
-    title_xpath: './/h4[@class="grve-post-title grve-text-hover-primary-1 grve-h4"]'
-    url_xpath: './/div[@class="grve-post-content"]//a/@href'
-    content_xpath: './/div[@class="grve-post-exerpt"]//p'
-    page_size: 10
-    disabled: false
-    categories: [law, news]
-    shortcut: lexf
+  # - name: lex forti
+  #   engine: xpath
+  #   paging: true
+  #   search_url: https://lexforti.com/legal-news/?s={query}
+  #   results_xpath: '//div[@class="grve-post-top"]'
+  #   title_xpath: './/h4[@class="grve-post-title grve-text-hover-primary-1 grve-h4"]'
+  #   url_xpath: './/div[@class="grve-post-content"]//a/@href'
+  #   content_xpath: './/div[@class="grve-post-exerpt"]//p'
+  #   page_size: 10
+  #   disabled: false
+  #   categories: [law, news]
+  #   shortcut: lexf
   
 
   - name: arxiv
@@ -3668,10 +3667,10 @@ engines:
     about:
       website: https://searchmysite.net
 
-  - name: internetarchivescholar
-    engine: internet_archive_scholar
-    shortcut: ias
-    timeout: 15.0
+  # - name: internetarchivescholar
+  #   engine: internet_archive_scholar
+  #   shortcut: ias
+  #   timeout: 15.0
 
   # Spotify needs API credentials
   # - name: spotify
